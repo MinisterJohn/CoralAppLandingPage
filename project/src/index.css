@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #FF6B6B;
+  --secondary: #4ECDC4;
+  --dark-primary: #e55c5c;
+  --dark-secondary: #3db8b0;
+  --background: #1a1a2e;
+  --text: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.coral-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+.coral-button {
+  @apply px-6 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.coral-button.disabled {
+  @apply opacity-70 cursor-not-allowed;
+  filter: grayscale(30%);
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(78, 205, 196, 0.1);
+  animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+.glow {
+  filter: drop-shadow(0 0 15px rgba(78, 205, 196, 0.5));
+}
+
+.coral-card {
+  @apply bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-2xl p-6 border border-opacity-20;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
